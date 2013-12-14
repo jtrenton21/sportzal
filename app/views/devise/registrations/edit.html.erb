@@ -1,0 +1,56 @@
+<div style="padding-top:80px;" id="headerwrap">
+   <div id="rcbg" class="row centered">
+      <h2><%= resource_name.to_s.humanize %> PROFILE</h2>
+            <%= link_to "Back", :back %>
+            <p id="propic"><%= image_tag @user.photo.url(:photo) %></p>
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="col-lg-2"></div>
+          <div class="col-lg-4 ">
+            <div class="field">
+              <%= f.label :first_name %><br />
+              <%= f.text_field :first_name %>
+            </div><br/>
+            <div class="field">
+              <%= f.label :last_name %><br />
+              <%= f.text_field :last_name %>
+            </div><br/>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.text_field :email %>
+            </div><br/>
+            <div class="field">
+              <%= f.label :photo %><br />
+              <span id"photo" style="margin-right: 20px; float:right"><%= f.file_field :photo %></span>
+            </div>
+            </div>
+            <div class="col-lg-4 ">
+           <div class="field">
+              <%= f.label :zip %><br />
+              <%= f.text_field :zip %>
+            </div><br/>
+            
+            
+            <div class="field">
+              <%= f.label :password %><br />
+             <%= f.password_field :password %>
+            </div><br/>
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation %>
+            </div><br/>
+            <div class="actions">
+              <%= f.submit %>
+            </div>
+        </div>
+      <% end %>
+      <div class="col-lg-3"></div>    
+  </div><br/>
+  <div class="row centered">
+    <h4>Delete Account</h4>
+    <p>Click the link below to delete your account</p>
+      <p><%= link_to "Delete Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+     
+  </div>
+</div>

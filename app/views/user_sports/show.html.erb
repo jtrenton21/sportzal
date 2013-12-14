@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user_sport.user %>
+</p>
+
+<p>
+  <b>Sport:</b>
+  <%= @user_sport.sport %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%= @user_sport.experience %>
+</p>
+
+<p>
+  <b>Skill level:</b>
+  <%= @user_sport.skill_level %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_sport_path(@user_sport) %> |
+<%= link_to 'Back', user_sports_path %>

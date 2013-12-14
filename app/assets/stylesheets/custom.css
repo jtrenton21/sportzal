@@ -1,0 +1,232 @@
+.matchy img {
+
+  max-width:120px;
+  max-height:140px;
+}
+
+.contents{
+
+	min-height:700px;
+}
+
+
+#profpic img{
+
+	height:145px;
+	float:left;
+	margin-right:10px;
+	width: 125px;
+}
+
+#user_photo img{
+
+  height:125px;
+  width:100px;
+}
+
+
+#uname{
+
+	font-size:22px;
+	font-weight:bold;
+	margin:-25px 0px -6px 15px;
+}
+
+#uemail{
+
+	margin-bottom:-6px;
+}
+
+#uzip{
+
+	margin-bottom:-6px;
+}
+
+.table-bordered > thead >tr > th {
+  background:grey;
+  color:white;
+  width:125px;
+}
+
+.table-bordered > tbody > tr > td {
+
+  width:125px;
+
+}
+
+
+/*Header************************/
+
+.beta{
+  color:#ff7878;
+  font-size:14px;
+  font-style:italic;
+  margin:0px 0px 0px 5px;
+}
+
+#logo{
+
+  margin-top:0px;
+}
+
+
+/*HOME PAGE**********************/
+
+#regbut1{
+
+  margin-top:25px;
+}
+
+/*DASHBoARD**********************/
+
+th{
+
+  text-align:center;
+}
+
+
+.mytime{
+
+  background-color:grey;
+  color:white;
+  border:1px solid black;
+  float:left;
+  padding:20px 30px 20px 30px;
+  margin-right:25px;
+  margin-bottom:25px;
+}
+
+
+.mytime:hover, #selected_mytime, .QuickStartLong:hover {
+    background: blue;
+    color:grey;
+    font-weight:bold;
+    
+}
+
+
+#thetime{
+
+  
+  list-style:none;
+  margin-bottom:10px;
+}
+
+#matchit{
+
+  margin-top:10px;
+}
+
+
+#mytime2{
+
+  background:blue;
+  color:white;
+  border:1px solid black;
+  float:left;
+  padding:15px 30px 20px 30px;
+  margin-right:25px;
+  margin-bottom:25px;
+}
+
+#mytime2 img{
+ border:2px solid white;
+ margin-bottom:5px;
+ height:150px;
+ width:140px;
+}
+
+#mytime2:hover {
+    background: blue;
+    color:grey;
+    font-weight:bold;
+}
+
+#sport{
+
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+#thetime2{
+
+  
+  list-style:none;
+  margin-bottom:10px;
+}
+
+
+
+
+/*SPORTS NEW EDIT**************************/
+
+#spn input{
+	
+
+
+}
+
+#sln{
+
+}
+
+
+
+
+#propic img{
+  border:3px solid white;
+  height:220px;
+  width:180px;
+}
+
+
+#invitez{
+
+  margin-top:10px;
+}
+
+textarea#new_acts_as_messageable_message_body{
+
+  height:200px;
+}
+
+.step_wrapper thead tr{
+
+  background:grey;
+  color:white;
+}
+
+.step_wrapper tbody tr:hover{
+
+  background:grey;
+  color:white;
+}
+
+
+ul#chat {
+  list-style: none;
+  padding: 0;
+  width: 400px;
+  height: 150px;
+  border: solid 1px #777;
+  margin: 0px 0px 25px 400px;
+  overflow: auto;
+}
+
+ul#chat li {
+  margin: 2px 5px;
+  padding: 0;
+}
+
+ul#chat li .created_at {
+  float: right;
+  color: #777;
+  font-size: 11px;
+  padding-left: 4px;
+  padding-top: 2px;
+}
+
+#message_content {
+  width: 240px;
+}

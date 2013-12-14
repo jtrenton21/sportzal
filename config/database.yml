@@ -1,0 +1,26 @@
+development:
+  adapter:  postgresql
+  encoding: unicode
+  host: localhost
+  username: tron
+  password: secret
+  database: app_devZ
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: tron
+  password: secret
+  database: app_testZ
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: tron
+  password: secret
+  database: app_productionZ
+  pool: 5

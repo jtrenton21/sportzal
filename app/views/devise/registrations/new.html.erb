@@ -1,0 +1,48 @@
+<div style="padding-top:80px;" id="headerwrap">
+   <div id="rcbg" class="row centered">
+		<h2>Sign up</h2>
+		<%#= render "devise/shared/links" %>
+		<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		  <%= f.error_notification %>
+		   
+		    <div class="col-lg-2"></div>
+    	    <div class="col-lg-4 ">
+		        <div class="field">
+		          <%= f.label :first_name %><br />
+		          <%= f.text_field :first_name %>
+		        </div><br/>
+		        <div class="field">
+		          <%= f.label :last_name %><br />
+		          <%= f.text_field :last_name %>
+		        </div><br/>
+		        <div class="field">
+		          <%= f.label :email %><br />
+		          <%= f.text_field :email %>
+		        </div><br/>
+		        <div class="field">
+       				<%= f.label :photo %><br />
+         			<span id"photo" style="margin-right: 20px; float:right"><%= f.file_field :photo %></span>
+        		</div>
+      	    </div>
+            <div class="col-lg-4 ">
+		       <div class="field">
+		          <%= f.label :zip %><br />
+		          <%= f.text_field :zip %>
+		        </div><br/>
+		       
+		        <div class="field">
+		          <%= f.label :password %><br />
+		         <%= f.password_field :password %>
+		        </div><br/>
+		        <div class="field">
+		          <%= f.label :password_confirmation %><br />
+		          <%= f.password_field :password_confirmation %>
+		        </div><br/>
+		        <div class="actions">
+		          <%= f.submit %>
+		        </div>
+		    </div>
+    	<% end %>
+    	<div class="col-lg-3"></div>		
+	</div>
+</div>
