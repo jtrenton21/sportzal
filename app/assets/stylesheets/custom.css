@@ -237,10 +237,30 @@ ul#chat li .created_at {
 
   list-style:none;
   float:left;
+  margin-top:30px;
 }
 
 #avail{
 
   margin-top:10px;
   font-weight:bold;
+}
+
+.sportz{
+
+  background:white;
+  min-height:280px;
+  margin:0px 40px 0px 40px;
+}
+
+.sportname{
+  
+  color:#f85c37;
+  font-weight:bold;
+
+}
+
+.detes{
+
+  font-size:12px;
 }

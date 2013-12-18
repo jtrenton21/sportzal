@@ -1,19 +1,19 @@
-
-        <div class="col-lg-4">
+<div class="sportz">
+        <div class="col-lg-12">
           <% @user_sports.each do |user_sport| %>
             <%unless user_sport.user == current_user %>
             <ul class="display">
               <li><b><%= user_sport.user.first_name %> <%= user_sport.user.last_name %></b></li>
               <%unless user_sport.sport.nil?%>
-              <li><%= user_sport.sport.name %></li>
+              <li class="sportname"><%= user_sport.sport.name %></li>
               <%end%>
-              <li>Years Played: <%= user_sport.experience %></li>
-              <li>Skill Level: <%= user_sport.skill_level %></li>
+              <li class="detes">Years Played: <%= user_sport.experience %></li>
+              <li class="detes">Skill Level: <%= user_sport.skill_level %></li>
               <li id="avail">Availability</li>
               <% user_sport.availables.each do |available|  %>
                   <%#unless user_sport.availables.nil?%>
                   
-                  <li><%= available.timeframe %>
+                  <li class="detes"><%= available.timeframe %>
                     <%= available.daypart%>
                   </li>
                      
@@ -23,7 +23,7 @@
                 <li>
                     <%= form_for user_root_path,   :html => { :id => "mymatch" }  do  |f| %>
                       <%= f.hidden_field :id, :value => user_sport.id %>
-                        <button id="matchit" type="submit" return="false">Match</button>
+                        <button id="matchit" type="submit" return="false">Invite</button>
                     <%end%>
                 </li>
                 <li><%= link_to 'Change', edit_user_sport_path(user_sport) %>
@@ -34,4 +34,4 @@
             <% end %>
           </div>
         
-    
+    </div>
