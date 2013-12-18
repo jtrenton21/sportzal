@@ -230,3 +230,17 @@ ul#chat li .created_at {
 #message_content {
   width: 240px;
 }
+
+/*UserSport Index*/
+
+.display{
+
+  list-style:none;
+  float:left;
+}
+
+#avail{
+
+  margin-top:10px;
+  font-weight:bold;
+}

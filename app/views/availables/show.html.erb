@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Weekday:</b>
+  <%= @available.weekday %>
+</p>
+
+<p>
+  <b>Start at:</b>
+  <%= @available.start_at %>
+</p>
+
+<p>
+  <b>End at:</b>
+  <%= @available.end_at %>
+</p>
+
+<p>
+  <b>Timeframe:</b>
+  <%= @available.timeframe %>
+</p>
+
+
+<%= link_to 'Edit', edit_available_path(@available) %> |
+<%= link_to 'Back', availables_path %>

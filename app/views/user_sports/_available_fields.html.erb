@@ -1,0 +1,35 @@
+<fieldset> 
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="form-group">
+        <%= f.label "Best Day" %><br />
+        <%= f.select :timeframe, collection: ["Sunday", "Monday ", "Tuesday ", "Wednesday ", "Thursday", "Friday", "Saturday"]%> 
+      </div>
+    </div>
+    <div class="col-lg-4">
+     <div class="form-group">
+       <%= f.label "Best Time" %><br />
+       
+          <%= f.select :daypart, collection: ["Early Morning", "Morning ", "Lunch Time ", "Afternoon ", "Evening", "Late Night"]%> 
+
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-group">
+       <ul style="float:left; list-style:none; font-size:12px;">
+          <li><b>Early Morning</b> <br/> 5:00 AM to 7:00 AM</li>
+          <li><b>Morning</b> <br/> 7:00 AM to 11:00 AM</li>
+          <li><b>Lunch Time</b> <br/> 11:00 AM to 1:00 PM</li>
+          <li><b>Afternoon</b> <br/> 1:00 PM to 5:00 PM</li>
+          <li><b>Evening</b> <br/> 5:00 PM to 8:00 PM</li>
+          <li><b>Late Night</b> <br/> 9:00 PM to 12:00 AM</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "Remove", '#', class: "remove_fields" %>
+  </div>
+</fieldset>

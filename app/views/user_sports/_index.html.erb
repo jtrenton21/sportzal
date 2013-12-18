@@ -1,0 +1,44 @@
+<div class="step_wrapper">
+<table class="table table-bordered"> 
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Sport</th>
+    <th>Year(s)</th>
+    <th>Skill</th>
+    <th>Day</th>
+    <th>From</th>
+    <th>Until</th>
+    <th>Match</th>
+    <th>Change</th>
+    <th>Remove</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <% @user_sports.each do |user_sport| %>
+    <tr>
+      <td><%= user_sport.user.first_name %></td>
+      <td><%= user_sport.sport.name %></td>
+       <td><%= user_sport.experience %></td>
+       <td><%= user_sport.skill_level %></td>
+      <%unless user_sport.available.nil?%>
+      <td><%= user_sport.available.weekday %></td>
+       <%end%>
+       <td><%= user_sport.from.strftime('%I : %M %P') %></td>
+       <td><%= user_sport.until.strftime('%I : %M %P') %></td>
+       <td>
+        <%= form_for user_root_path,   :html => { :id => "mymatch" }  do  |f| %>
+                <%= f.hidden_field :id, :value => user_sport.id %>
+                <button  id="matchit" type="submit" return="false">Matches</button>
+            
+                <%end%>
+              </td>
+      <td><%= link_to 'Change', edit_user_sport_path(user_sport) %></td>
+      <td><%= link_to 'Remove', user_sport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<br/>

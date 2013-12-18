@@ -10,3 +10,13 @@
 ["Basketball", "Golf", "Tennis", "Squash", "Workout", "Running", "Climbing"].each do |sport|
 	Sport.find_or_create_by_name(sport)
 end
+
+["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ].each do |available|
+	Available.find_or_create_by_weekday(available)
+end
+
+
+
+# ["Morning", "Afternoon", "Evening", "Anytime" ].each do |available|
+# 	Available.find_or_create_by_timeframe(available)
+# end

@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.14'
 
 gem 'bcrypt-ruby', '~> 3.0.1'
-gem 'json'  
+gem 'json' 
+gem 'i18n' 
 
 group :development, :test do
   gem 'pg'
@@ -33,6 +34,7 @@ end
  #Authentication 
   
   gem 'devise'
+  gem 'devise_invitable'
   gem 'omniauth-facebook'
   gem 'omniauth-twitter'
  
@@ -42,13 +44,25 @@ end
  #Misc 
   gem 'jbuilder'
   gem 'simple_form'
+  gem "nested_form"
   gem 'thin'
-  
+  gem 'haml'
+  gem 'yui-compressor'
+  gem 'closure-compiler'
  #Messaging and Chat
+  
   gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
   gem 'private_pub'
   gem "faye"
   
+  
+#Search Utility
+
+gem 'nokogiri'
+gem 'rsolr'
+gem 'rsolr-ext'
+gem 'hash_struct'
+gem 'ancestry'
   
  #Search and Location
   gem 'geocoder'

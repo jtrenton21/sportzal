@@ -10,34 +10,36 @@
 </div>
 <div class="container w">
         <div class="row centered">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
+                
+                <div class="col-lg-12">
                         <i class="fa fa-dribbble"></i>
-                        <h3>MY SPORTS</h3>
-                        <a data-toggle="modal" data-target="#myModal2" href="#myModal2">ADD SPORT</a>
-                        <%#= render 'new_sport' %>
-                        <%#= render 'sports' %>
+                        <h3>MY SPORTS DASHBOARD</h3>
+                        <p style="margin-bottom:-1px;">Click NEW to add a new sport and your availability to play it.</p>
+                        <%= link_to 'ADD NEW', new_user_sport_path %>
+                        <!-- <a data-toggle="modal" data-target="#myModal2" href="#myModal2">NEW</a><br/> -->
+                        <%#= render 'user_sports/new' %>
+                        <%= render 'user_sports/allsports' %>
                 </div>
         </div><br/>
         <div class="row centered">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10">
+                <div class="col-lg-12">
+                
                         <i class="fa fa-calendar"></i>
                         <h3>AVAILABILITY</h3>
                         <p><%#= link_to 'ADD AVAILABILITY', new_meeting_path %></p>
-                        <a data-toggle="modal" data-target="#myModal3" href="#myModal3">ADD AVAILABILITY</a>
-                        <%#= render 'new_meeting' %>
-                        <%#= render 'meetings' %>
+                        <!-- <a data-toggle="modal" data-target="#myModal3" href="#myModal3">ADD AVAILABILITY</a> -->
+                        <%#= render 'user_availables/new' %>
+                        <%= render 'all_sports2' %>
                         
                 </div>
-                <div class="col-lg-1"></div>
+                
         </div><br/>
         <div class="row centered">
                 
                 <div class="col-lg-12">
                         <i class="fa fa-retweet"></i>
                         <h3>MATCHES</h3>
-                        <%#= render 'matches' %>
+                        <%= render 'matches' %>
                 </div><!-- col-lg-4 --><br>
                 
         </div>

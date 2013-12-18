@@ -1,0 +1,44 @@
+<div class="step_wrapper">
+<table class="table table-bordered"> 
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Sport</th>
+    <th>Year(s)</th>
+    <th>Skill</th>
+    <th>Day</th>
+    
+    <th>Time</th>
+    <th>Invite</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  <% unless @myuser_sports.nil? %>
+  <% @myuser_sports.each do |user_sport| %>
+  <%unless user_sport.user == current_user %>
+    <tr>
+     <td><%= user_sport.user.first_name %></td>
+      <td><%= user_sport.sport.name %></td>
+       <td><%= user_sport.experience %></td>
+       <td><%= user_sport.skill_level %></td>
+      <%unless user_sport.available.nil?%>
+      <td><%= user_sport.available.weekday %></td>
+       <%end%>
+       
+       <td><%= user_sport.daypart%></td>
+
+      <td>
+        
+
+        <a href"#">Invite</a>
+      </td>
+      
+    </tr>
+  <%end %>
+  <% end %>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<br/>

@@ -1,0 +1,29 @@
+<h1>Listing availables</h1>
+
+<table>
+  <tr>
+    <th>Weekday</th>
+    <th>Start at</th>
+    <th>End at</th>
+    <th>Timeframe</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @availables.each do |available| %>
+  <tr>
+    <td><%= available.weekday %></td>
+    <td><%= available.start_at %></td>
+    <td><%= available.end_at %></td>
+    <td><%= available.timeframe %></td>
+    <td><%= link_to 'Show', available %></td>
+    <td><%= link_to 'Edit', edit_available_path(available) %></td>
+    <td><%= link_to 'Destroy', available, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Available', new_available_path %>

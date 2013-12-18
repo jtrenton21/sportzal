@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  weekday: MyString
+  start_at: MyString
+  end_at: MyString
+  timeframe: MyString
+
+two:
+  weekday: MyString
+  start_at: MyString
+  end_at: MyString
+  timeframe: MyString

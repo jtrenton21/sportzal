@@ -1,33 +1,63 @@
-<%= form_for(@user_sport) do |f| %>
-  <% if @user_sport.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_sport.errors.count, "error") %> prohibited this user_sport from being saved:</h2>
+<!-- <div class="col-lg-6 col-lg-offset-3"> -->
+  <%= simple_nested_form_for @user_sport do |f| %>
+    <div class="row">
+      <div class="col-lg-4">
+        <div id="sln" class="field">
+         <p>Please Select Sport</p>
+         <%= f.collection_select(:sport_id, Sport.all, :id, :name)  %>
+        </div><br>
+      </div>
+      <div class="col-lg-4">
+        <div class="field">
+          <p>Years Played</p>
+          <%= f.select :experience, collection: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"]%>
+        </div>
+      </div>
+      <div class="col-lg-4"> 
+        <div class="field">
+          <p>Your Skill Level</p>
+          <%= f.select :skill_level, collection: ["Beginner", "Intermediate", "Advanced", "Expert", "World-Class"]%>
+        </div>
+      </div>
+    </div><br/>
+      <p>Click Add Availability to add the best time for you to play this sport.</p>
+      <%= f.fields_for :availables do |available_form| %>
+       <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <%= f.label "Best Day" %><br />
+          <%= available_form.select :timeframe, collection: ["Sunday", "Monday ", "Tuesday ", "Wednesday ", "Thursday", "Friday", "Saturday"]%> 
+        </div>
+      </div>
+      <div class="col-lg-4">
+       <div class="form-group">
+         <%= f.label "Best Time" %><br />
+         
+            <%= available_form.select :daypart, collection: ["Anytime", "Early Morning", "Morning ", "Lunch Time ", "Afternoon ", "Evening", "Late Night"]%> 
 
-      <ul>
-      <% @user_sport.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        </div>
+      </div>
+      <!-- <div class="col-lg-4">
+        <div class="form-group">
+         <ul style="float:left; list-style:none; font-size:12px;">
+            <li><b>Early Morning</b> <br/> 5:00 AM to 7:00 AM</li>
+            <li><b>Morning</b> <br/> 7:00 AM to 11:00 AM</li>
+            <li><b>Lunch Time</b> <br/> 11:00 AM to 1:00 PM</li>
+            <li><b>Afternoon</b> <br/> 1:00 PM to 5:00 PM</li>
+            <li><b>Evening</b> <br/> 5:00 PM to 8:00 PM</li>
+            <li><b>Late Night</b> <br/> 9:00 PM to 12:00 AM</li>
+          </ul>
+
+        </div>
+      </div>
+    </div> -->
+    <div class="row">
+       <%= available_form.link_to_remove "Remove" %> 
       <% end %>
-      </ul>
-    </div>
+      <p><%= f.link_to_add "Add Availability", :availables %></p><br/>
+                  
+        <div class="actions">
+          <%= f.submit "Submit" %>
+        </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </div>
-  <div class="field">
-    <%= f.label :sport %><br />
-    <%= f.text_field :sport %>
-  </div>
-  <div class="field">
-    <%= f.label :experience %><br />
-    <%= f.text_field :experience %>
-  </div>
-  <div class="field">
-    <%= f.label :skill_level %><br />
-    <%= f.text_field :skill_level %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<!-- </div> -->

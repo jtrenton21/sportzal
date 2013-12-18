@@ -1,0 +1,35 @@
+<%= simple_nested_form_for @user_sport do |f| %>
+  <div class="row">
+    <div class="col-lg-4">
+      <div id="sln" class="field">
+       <p>Please Select Sport</p>
+       <%= f.collection_select(:sport_id, Sport.all, :id, :name)  %>
+      </div><br>
+    </div>
+    <div class="col-lg-4">
+      <div class="field">
+        <p>Years Played</p>
+        <%= f.select :experience, collection: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"]%>
+      </div>
+    </div>
+    <div class="col-lg-4"> 
+      <div class="field">
+        <p>Your Skill Level</p>
+        <%= f.select :skill_level, collection: ["Beginner", "Intermediate", "Advanced", "Expert", "World-Class"]%>
+      </div>
+    </div>
+  </div><br/>
+    <p>Click Add Availability to add the best time for you to play this sport.</p>
+    <%= f.fields_for :availables do |builder| %>
+      <%= render 'available_fields', f: builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Add Availability", f, :availables %></p><br/>
+                
+      <div class="actions">
+        <%= f.submit "Submit" %>
+      </div>
+<% end %>
+
+
+
+
