@@ -3,11 +3,26 @@ class UserSportsController < ApplicationController
   # GET /user_sports.json
   def index
     @user_sports = UserSport.all
+    @thuser_sports = get_match
+
+
+     # @theuser_sports = UserSport.joins(:availables).where(true)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @user_sports }
     end
+  end
+
+  def get_match
+    @user_sport = UserSport.includes(:availables)
+    # @available = Available.all
+    @mysport = current_user.user_sports
+    UserSport.where(:sport_id => @mysport.third.sport.id)
+    # UserSport.joins(:availables).where(:timeframe => available.first.timeframe)
+    
+    # UserSport.where(@mysport.last.sport.id == @user_sport.last.sport.id && current_user.id != @user_sport.first.user_id)
+    
   end
 
   # GET /user_sports/1

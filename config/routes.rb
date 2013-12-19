@@ -1,8 +1,5 @@
 Sportzal::Application.routes.draw do
-  
-  resources :user_availables
-
-  
+    
 
   resources :availables
 
