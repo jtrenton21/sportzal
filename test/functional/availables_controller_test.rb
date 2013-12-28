@@ -18,7 +18,7 @@ class AvailablesControllerTest < ActionController::TestCase
 
   test "should create available" do
     assert_difference('Available.count') do
-      post :create, available: { end_at: @available.end_at, start_at: @available.start_at, timeframe: @available.timeframe, weekday: @available.weekday }
+      post :create, available: { daypart: @available.daypart, timeframe: @available.timeframe, weekday: @available.weekday }
     end
 
     assert_redirected_to available_path(assigns(:available))
@@ -35,7 +35,7 @@ class AvailablesControllerTest < ActionController::TestCase
   end
 
   test "should update available" do
-    put :update, id: @available, available: { end_at: @available.end_at, start_at: @available.start_at, timeframe: @available.timeframe, weekday: @available.weekday }
+    put :update, id: @available, available: { daypart: @available.daypart, timeframe: @available.timeframe, weekday: @available.weekday }
     assert_redirected_to available_path(assigns(:available))
   end
 

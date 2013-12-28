@@ -1,0 +1,43 @@
+<script>
+$(function(){
+ $('#slider')
+   .bxslider() // add any non-default options here
+    // only add this if your slider includes supported videos (new v1.9)
+});
+</script>
+<div class="sportz">
+  <div class="col-lg-12">
+      <ul class="bxslider"  class="display">
+                <% @user_sports.each do |user_sport| %>
+                <li><div class="text">
+                   
+                   <li class="uname"><b><%= user_sport.user.first_name %> <%= user_sport.user.last_name %></b><li>
+        <%unless user_sport.sport.nil?%>
+        <li  class="sportname"><%= user_sport.sport.name %></li>
+        <%end%>
+        <li class="detes">Years Played: <%= user_sport.experience %></li>
+        <li class="detes">Skill Level: <%= user_sport.skill_level %></li>
+        <li id="avail">Availability</p>
+        <% user_sport.availables.each do |available|  %>
+            <%#unless user_sport.availables.nil?%>
+            
+           <p class="detes"><%= available.timeframe %>
+              <%= available.daypart%>
+            </li>
+               
+             <%end%>
+            
+             
+         
+         <li class="detes"><%= link_to 'Change', edit_user_sport_path(user_sport) %>
+            | <%= link_to 'Remove', user_sport, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+                   </div></li>
+                  <% end %>
+                
+                </ul>
+              
+              
+            </div>
+       </div>
+     

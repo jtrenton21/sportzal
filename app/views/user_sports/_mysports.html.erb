@@ -1,16 +1,16 @@
 <div class="sportz">
         <div class="col-lg-12">
-          <% @user_sports.each do |user_sport| %>
-            <%unless user_sport.user != current_user %>
+          <% @zuser_sports.each do |zuser_sport| %>
+            <%unless zuser_sport.user != current_user %>
             <ul class="display">
-              <li><b><%= user_sport.user.first_name %> <%= user_sport.user.last_name %></b></li>
-              <%unless user_sport.sport.nil?%>
-              <li class="sportname"><%= user_sport.sport.name %></li>
+              <li><b><%= zuser_sport.user.first_name %> <%= zuser_sport.user.last_name %></b></li>
+              <%unless zuser_sport.sport.nil?%>
+              <li class="sportname"><%= zuser_sport.sport.name %></li>
               <%end%>
-              <li class="detes">Years Played: <%= user_sport.experience %></li>
-              <li class="detes">Skill Level: <%= user_sport.skill_level %></li>
+              <li class="detes">Years Played: <%= zuser_sport.experience %></li>
+              <li class="detes">Skill Level: <%= zuser_sport.skill_level %></li>
               <li id="avail">Availability</li>
-              <% user_sport.availables.each do |available|  %>
+              <% zuser_sport.availables.each do |available|  %>
                   <%#unless user_sport.availables.nil?%>
                   
                   <li class="detes"><%= available.timeframe %>
@@ -22,13 +22,11 @@
                    
                 <li>
                     <%#= form_for user_root_path,   :html => { :id => "mymatch" }  do  |f| %>
-                      <%#= f.hidden_field :id, :value => user_sport.id %>
+                      <%#= f.hidden_field :id, :value => zuser_sport.id %>
                         <!-- <button id="matchit" type="submit" return="false">Match</button> -->
                     <%#end%>
                 </li>
-               <li class="detes"><%= link_to 'Change', edit_user_sport_path(user_sport) %>
-                  | <%= link_to 'Remove', user_sport, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </li>
+               
               </ul>
             <% end %>
             <% end %>

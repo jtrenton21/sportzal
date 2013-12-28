@@ -1,24 +1,14 @@
 <div class="contents"> 
-	<div class="container">
-		<div style="margin:40px 0px 40px 0px;"id="dg">
-			<div class="col-lg-4 col-lg-offset-4">
-				<%= render "shared/messages_menu" %>
-				<%# if @message.errors.present? %>
-					<label><%#= @message.errors.full_messages %></label>
-				<%# end %>
-				<%= simple_form_for @message do |f| %>
-					<fieldset>
-						
-					<%= f.input :recipient_id, collection: recipients, :input_html=> {class: 'recipients'}, label: 'Sent To' %>
-					
-					<%= f.input :subject,:label=> false,:placeholder=>'enter title ...' %>
-					<%= f.input :body, :label=> false, :required=> false,:input_html => {:rows=>5,:style=>'width:100%'} %>
-					<%= f.input :draft, :as=>:boolean , :label=>'Save as Draft?' %>
-					
-					<%= f.button :submit,'Send Message',:class=>"btn btn-primary" %>
-						
-					</fieldset>
-				<% end %>
+  	<div class="container">
+    	<div style="margin-top:40px;" id="dg"> 
+      		<div class="row centered">
+				<h1> Reply </h1>
+
+				<%= render @message.parent if @message.parent %>
+
+				<%= render "form" %>
+
+				<p><%= link_to "Back to Messages", messages_path %></p>
 			</div>
 		</div>
 	</div>

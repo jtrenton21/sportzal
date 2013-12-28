@@ -1,11 +1,22 @@
 Sportzal::Application.routes.draw do
-    
+  mount WillFilter::Engine => "/will_filter"   
 
   resources :availables
 
+
+ 
+
+  resources :messages
+
+
+  resources :user_sports do
+     collection do
+      match 'search' => 'contents#search', via: [:get, :post], as: :search
+     end
+  end
 
   devise_for :users
-  resources :availables
+ 
   resources :user_sports
   resources :sports
   

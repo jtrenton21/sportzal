@@ -264,3 +264,10 @@ ul#chat li .created_at {
 
   font-size:12px;
 }
+
+/*GeoLocation*/
+
+#mapcanvas{
+
+  margin:0 auto;
+}

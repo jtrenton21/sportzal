@@ -6,10 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Sport.create(name: 'Basketball')
+Sport.create(name: 'Golf' )
+Sport.create(name: 'Tennis' )
+Sport.create(name: 'Squash' )
+Sport.create(name: 'Workout' )
+Sport.create(name: 'Running' )
+Sport.create(name: 'Climbing' )
 
-["Basketball", "Golf", "Tennis", "Squash", "Workout", "Running", "Climbing"].each do |sport|
-	Sport.find_or_create_by_name(sport)
-end
+
+
+
+
+
 
 ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ].each do |available|
 	Available.find_or_create_by_weekday(available)

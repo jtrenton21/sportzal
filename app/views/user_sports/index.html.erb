@@ -2,13 +2,23 @@
   <div class="container">
     <div style="margin-top:40px;" id="dg"> 
       <div class="row centered">
+        <!-- <%#= search_form_for @search do |f| %>
+          <%#= f.condition_fields do |c| %>
+            <%#= render "condition_fields", f: c%>
+          <%# end %>
+          <p><%#= link_to_add_fields "Add Conditions", f, :condition %>
+           <div class="actions"><%#= f.submit "Search" %></div>
+        <%# end %><br/> -->
+        <%#= link_to "Messages" message_path %>
         <p style="margin-bottom:-1px;">Click ADD NEW to add a new sport,<br/> and your availability to play it.</p><br/>
         <%= link_to 'ADD NEW', new_user_sport_path %>     
         <div class="container w">
-          <div class="row centered">
+          <div sclass="row centered">
             <div class="col-lg-12">
               <h3>ALL USERS</h3><br/>
+                 <%= paginate @user_sports %>
                 <%= render 'allsports' %>
+
             </div>
           </div>
         </div>
@@ -25,6 +35,14 @@
             <div class="col-lg-12">
               <h3>NOT CURRENT USER</h3><br/>
                 <%= render 'thsports' %>
+            </div>
+          </div>
+        </div>
+        <div class="container w">
+          <div class="row centered">
+            <div class="col-lg-12">
+              <h3>USER GEOLOCATION</h3><br/>
+                <%= render 'user_location' %>
             </div>
           </div>
         </div>

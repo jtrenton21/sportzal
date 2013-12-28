@@ -23,10 +23,11 @@ rss.png: rss-1de23f092b4f93adf1d17bc1710ae08b.png
 rss/index.png: rss-1de23f092b4f93adf1d17bc1710ae08b.png
 tw.png: tw-88bbd0812e2f61d3986ab7048ee5eeed.png
 tw/index.png: tw-88bbd0812e2f61d3986ab7048ee5eeed.png
-application.js: application-81f16ea4de07fda089902a967a510cb5.js
-application/index.js: application-81f16ea4de07fda089902a967a510cb5.js
-application.css: application-61c34bbcfd17798a66e4bac86e072f11.css
-application/index.css: application-61c34bbcfd17798a66e4bac86e072f11.css
+README: README
+application.js: application-a8e31c98299a36514362466947a0c836.js
+application/index.js: application-a8e31c98299a36514362466947a0c836.js
+application.css: application-65cc66642443b184a65feecce7cc7af9.css
+application/index.css: application-65cc66642443b184a65feecce7cc7af9.css
 jquery-ui/animated-overlay.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/animated-overlay/index.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-7d1197a52442bc56fcad60d0390f4b32.png

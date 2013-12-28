@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :zip, :photo, :user_sports_attributes, :user_availables_attributes
+  attr_accessible :email, :password, :locations_attributes, :password_confirmation, :remember_me, :first_name, :last_name, :zip, :photo, :user_sports_attributes, :user_availables_attributes
   
   serialize :omniauth_data, JSON
   # Include default devise modules. Others available are:
@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
   has_many :invitations, :class_name => self.to_s, :as => :invited_by
   has_many :messages, class_name: 'Message', foreign_key: 'user_id'
   has_many :user_availables
+ 
   has_many :user_sports
-  has_many :sports, through: :user_sports
+  has_and_belongs_to_many :sports
   has_many :availables, through: :user_availables
   accepts_nested_attributes_for :user_sports
 
@@ -23,8 +24,13 @@ class User < ActiveRecord::Base
             :url  => "/assets/images/avatar/:basename.:extension",
             :path => ":rails_root/public/assets/images/avatar/:basename.:extension"
 
-
   
+  scope :match_to, lambda { |sport_names| joins(:sports).where("sports.name IN (?)", sport_names).group("users.id") }  
+  
+    
+  def other_user
+    User.where(user_id != current_user.id)
+  end
   def name
     return "#{self.first_name} #{self.last_name}"
   end

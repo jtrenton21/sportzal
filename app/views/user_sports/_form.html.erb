@@ -5,6 +5,8 @@
         <div id="sln" class="field">
          <p>Please Select Sport</p>
          <%= f.collection_select(:sport_id, Sport.all, :id, :name)  %>
+          <%#= hidden_field_tag :sport_id, :value => params[:group_id].sport_id %>
+         
         </div><br>
       </div>
       <div class="col-lg-4">
@@ -55,7 +57,7 @@
        <%= available_form.link_to_remove "Remove" %> 
       <% end %>
       <p><%= f.link_to_add "Add Availability", :availables %></p><br/>
-                  
+                
         <div class="actions">
           <%= f.submit "Submit" %>
         </div>
